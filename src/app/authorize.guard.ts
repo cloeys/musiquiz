@@ -16,7 +16,7 @@ export class AuthorizeGuard implements CanActivate {
     if (this.service.isAuthorized.value) {
       return true;
     } else {
-      window.location.href = `https://accounts.spotify.com/authorize?client_id=${'9f9c193c6cb24df8bd01cb13aa8cd7b9'}&response_type=token&redirect_uri=http://localhost:4200/authorize`;
+      window.location.href = `https://accounts.spotify.com/authorize?client_id=${'9f9c193c6cb24df8bd01cb13aa8cd7b9'}&response_type=token&redirect_uri=https://musiquiz-be.herokuapp.com/authorize`;
       return false;
     }
   }
