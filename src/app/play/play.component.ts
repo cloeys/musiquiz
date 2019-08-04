@@ -18,10 +18,10 @@ export class PlayComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.spotifyService.getPlaylist('rock').subscribe((playList: Track[]) => {
-      this.loaded = true;
-      console.log(playList);
-      this.playList = playList;
-    });
+    // this.spotifyService.getPlaylist('rock').subscribe((playList: Track[]) => {
+    //   this.loaded = true;
+    //   console.log(playList);
+    //   this.playList = playList;
+    // });
   }
 }

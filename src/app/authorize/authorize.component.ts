@@ -18,7 +18,7 @@ export class AuthorizeComponent implements OnInit {
   ngOnInit() {
     console.log('init');
     this.activatedRoute.paramMap.subscribe(params => {
-      console.log(params);
+      console.log(this.activatedRoute);
       this.service.isAuthorized.next(true);
       this.router.navigate(['play']);
     });
