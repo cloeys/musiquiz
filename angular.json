@@ -90,7 +90,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "https://sdk.scdn.co/spotify-player.js"
+            ]
           }
         },
         "lint": {

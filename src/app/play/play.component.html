@@ -1,0 +1,13 @@
+<div *ngIf="loaded">
+    <ul>
+        <li *ngFor="let track of playList">
+            {{track.name}} ({{track.preview_url}})
+            Artists:
+            <ul>
+                <li *ngFor="let artist of track.artists">
+                    {{artist.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
