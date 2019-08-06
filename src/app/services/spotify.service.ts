@@ -8,7 +8,8 @@ import { Track } from '../models/track.model';
 })
 export class SpotifyService {
 
-  private apiUrl = 'http://localhost:64838/api/v1';
+  token: string;
+  private apiUrl = 'http://musiquiz-api.azurewebsites.net/api/v1';
   isAuthorized: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
@@ -17,5 +18,9 @@ export class SpotifyService {
 
   getPlaylist(genre: string): Observable<Track[]> {
       return this.http.get<Track[]>(`${this.apiUrl}/start/${genre}`);
+  }
+
+  getPlaylistAuthorized(genre: string): Observable<Track[]> {
+    return this.http.get<Track[]>(`${this.apiUrl}/start/${genre}/${this.token}`);
   }
 }

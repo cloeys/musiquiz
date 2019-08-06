@@ -17,11 +17,11 @@ export class AuthorizeComponent implements OnInit {
 
   ngOnInit() {
     console.log('init');
-    this.activatedRoute.paramMap.subscribe(params => {
-      console.log(this.activatedRoute);
+    if (this.activatedRoute.snapshot.fragment.substring(13, this.activatedRoute.snapshot.fragment.indexOf('&')) != null) {
+      this.service.token = this.activatedRoute.snapshot.fragment.substring(13, this.activatedRoute.snapshot.fragment.indexOf('&'));
       this.service.isAuthorized.next(true);
       this.router.navigate(['play']);
-    });
+    }
   }
 
 }

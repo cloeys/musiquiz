@@ -1,3 +1,16 @@
+
+<audio #audio controls>
+    <source [(src)]="playList[currentSong].preview_url" *ngIf="loaded">
+</audio>
+<form>
+    <input type="text" [(ngModel)]="input" name="input" autocomplete="off" autofocus>
+    <!-- <button (click)="checkCorrect(); false" style="position: absolute; left: -9999px" [disabled]='finished || count == 0'></button> -->
+    <button type='button' (click)="skip(); false" [disabled]='finished'>Skip</button>
+</form>
+<p *ngIf='!finished'>Time: {{ counter$ | async }}</p>
+<p>Score: {{ score }}</p>
+<p *ngIf='finished'>'t Is gedaan!</p>
+<!-- 
 <div *ngIf="loaded">
     <ul>
         <li *ngFor="let track of playList">
@@ -9,5 +22,5 @@
                 </li>
             </ul>
         </li>
-    </ul>
-</div>
+    </ul>  
+</div> -->
